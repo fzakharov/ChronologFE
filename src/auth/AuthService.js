@@ -16,7 +16,7 @@ export default class AuthService {
   auth0 = new auth0.WebAuth({
     domain: 'chronolog.eu.auth0.com',
     clientID: 'xHuQJZLw1YD1BVudRcJFsyVf23s5NEQE',
-    redirectUri: window.location.origin + '/callback',
+    redirectUri: window.location.origin + '/#/callback',
     audience: 'https://chronolog.eu.auth0.com/api/v2/',
     responseType: 'token id_token'
     // scope: 'openid profile'
