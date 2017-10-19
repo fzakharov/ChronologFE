@@ -24,7 +24,7 @@
       return {
         message: '',
         ping () {
-          Vue.http.get('http://lvh.me:3001/api/public', { headers: {'Content-Type': 'application/json'} })
+          Vue.http.get('https://chrapi.herokuapp.com/api/public', { headers: {'Content-Type': 'application/json'} })
             .then(response => {
               this.message = response.body.message
             }, error => {
@@ -33,7 +33,7 @@
         },
         securedPing () {
           var token = localStorage.getItem('access_token')
-          Vue.http.get('http://lvh.me:3001/api/private', {
+          Vue.http.get('https://chrapi.herokuapp.com/api/private', {
             headers: {
               'Content-Type': 'application/json',
               'Authorization': 'Bearer ' + token
