@@ -3,7 +3,8 @@ import Vue from 'vue'
 export default class FactsfeedService {
   loadFacts (f) {
     var token = localStorage.getItem('access_token')
-    Vue.http.get('http://lvh.me:3001/api/private', {
+    // Vue.http.get('http://lvh.me:3001/api/private', {
+    Vue.http.get('https://chrapi.herokuapp.com/api/private', {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token
