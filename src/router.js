@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './components/Home'
+import AddFact from './components/AddFact'
 import Welcome from './components/Welcome'
 import Callback from './components/Callback'
 import Error404 from './components/Error404'
@@ -24,6 +25,11 @@ const router = new Router({
       path: '/home',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/addFact',
+      name: 'AddFact',
+      component: AddFact
     },
     {
       path: '/callback',

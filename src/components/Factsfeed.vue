@@ -1,5 +1,8 @@
 <template>
   <div>
+    <q-btn @click="$router.push('/addFact')">
+      <q-icon name="add"></q-icon>
+    </q-btn>
     <q-list highlight>
       <q-list-header>{{message}}</q-list-header>
       <q-item v-for="fact in factsFeed.facts" :key="fact.id">
@@ -23,7 +26,9 @@ import {
   QItemMain,
   QItemTile,
   QChip,
-  QPopover
+  QPopover,
+  QBtn,
+  QIcon
 } from 'quasar'
 
 // import FactsfeedService from './FactsfeedService'
@@ -41,7 +46,9 @@ export default {
     QItemMain,
     QItemTile,
     QChip,
-    QPopover
+    QPopover,
+    QBtn,
+    QIcon
   },
   name: 'factsfeed',
   data: function () {
