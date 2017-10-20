@@ -19,8 +19,6 @@ export default class AuthService {
     redirectUri: window.location.origin + '/callback',
     audience: 'https://chronolog.eu.auth0.com/api/v2/',
     responseType: 'token id_token'
-    // scope: 'openid profile'
-    // scope: 'read:rules'
   })
 
   login () {

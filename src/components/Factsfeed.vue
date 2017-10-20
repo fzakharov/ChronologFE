@@ -2,7 +2,7 @@
   <div>
     <q-list highlight>
       <q-list-header>{{message}}</q-list-header>
-      <q-item v-for="fact in facts" :key="fact.id">
+      <q-item v-for="fact in factsFeed.facts" :key="fact.id">
         <q-item-side stamp>{{fact.id}}</q-item-side>
         <q-item-main>
           <q-item-tile label>{{fact.title}}</q-item-tile>
@@ -13,8 +13,6 @@
 </template>
 
 <script>
-
-import FactsfeedService from './FactsfeedService'
 
 import {
   QList,
@@ -28,7 +26,11 @@ import {
   QPopover
 } from 'quasar'
 
-const feedService = new FactsfeedService()
+// import FactsfeedService from './FactsfeedService'
+// const feedService = new FactsfeedService()
+import MockFactsfeedService from './MockFactsfeedService'
+const factsfeedService = new MockFactsfeedService()
+
 export default {
   components: {
     QList,
@@ -44,13 +46,13 @@ export default {
   name: 'factsfeed',
   data: function () {
     return {
-      facts: [],
+      factsFeed: {facts: []},
       message: ''
     }
   },
   mounted: function () {
     var vm = this
-    feedService.loadFacts(vm)
+    factsfeedService.loadFacts(vm)
   }
 }
 </script>
